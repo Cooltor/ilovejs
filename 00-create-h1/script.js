@@ -11,6 +11,14 @@ the h1 text must be green .
  
 
 
+const body = document.body;
+
+const h1 = document.createElement('h1');
+body.append(h1);
+
+h1.innerHTML = "I'm the best";
+h1.style.color = "green";
+
 
 
 
