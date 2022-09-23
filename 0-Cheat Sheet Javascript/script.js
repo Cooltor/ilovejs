@@ -1,20 +1,27 @@
  
 // string literal
 let obj = {
-    name: 'js'
+    name: 'js', 
+    '🧓' : ''
 }
 console.log(obj.name ) // Résultat : js 
-console.log(obj['name']) // Résultat similaire : js  
+console.log(obj['🧓']) // Résultat similaire : js  
 
 
 
 // destructuring
 let code = {
-    text: 'vive le js '
+    text: 'vive le js ', 
+    age: 36
 }
 
-const { text } = code
+const { text , age } = code
 console.log(text) // Résultat : vive le js
+
+const tab = [ 1,2,3]
+const [a,b,c] = tab
+
+ 
 
 
 // spread operator
@@ -24,11 +31,18 @@ let humain = {
     code: 'js', 
       
 }
-
-let Ahmed = {...humain, job:'formateur'}
+ 
+let Ahmed = {...humain, job:'formateur' }
 console.log(Ahmed) // Résultat : {age: 23, code: 'js', job: 'formateur'}
 
 
+// import export function don't forget  type="module" in index.js
+
+export function addNum (num){
+    return num 
+}
+//import { createHTML} from 'https://cdn.jsdelivr.net/gh/DocteurSEO/easyfire@master/easyjsv0.0.9.js'
+import {addNum, other } from './script.js'
 
 // map 
 
@@ -88,4 +102,39 @@ console.log(tableau ) //  ['b', 'c']
 fetch("url")
 .then(res => res.json())
 .then(data => console.log(data)) 
+
+let dataArray = []
+// fetch 
+fetch("https://hp-api.herokuapp.com/api/characters")
+.then(res => res.json())
+.then(data => {iWillSurvive(data)
+    dataArray = data 
+} ) 
+
+function iWillSurvive(characters) {
+ console.log(characters)
+
+    // characters.forEach(perso => {
+    //     const {name} = perso
+    //     document.querySelector("ul").innerHTML += `
+    //      <li>${name}</li>
+    //     `
+    // } ) 
+
+
+    // characters.forEach(perso => console.log(perso ) ) 
+}
+
+
+// fetch async await 
+
+// async function easyFetch (url, callback){
+
+//     const res = await fetch(url)
+//     const data = await res.json()
+//     callback(data)
+     
+// }
+ //easyFetch("https://hp-api.herokuapp.com/api/characters", iWillSurvive )
+
  
